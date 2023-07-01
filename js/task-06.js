@@ -1,8 +1,8 @@
-const validationInput = document.getElementById('validation-input');
-
 validationInput.addEventListener('blur', () => {
   const requiredLength = parseInt(validationInput.getAttribute('data-length'));
-  const enteredLength = validationInput.value.length;
+  const enteredValue = validationInput.value.trim(); // Доданий метод trim()
+
+  const enteredLength = enteredValue.length;
 
   if (enteredLength === requiredLength) {
     validationInput.classList.remove('invalid');
